@@ -1,0 +1,56 @@
+:root {
+  /* Colors */
+  --bg-primary: #121212;
+  /* Charcoal Gray */
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #252525;
+
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-muted: #666666;
+
+  --accent-primary: #00FFFF;
+  /* Electric Cyan */
+  --accent-secondary: #FF00FF;
+  /* Magenta for contrast */
+  --accent-glow: rgba(0, 255, 255, 0.6);
+  --accent-glow-secondary: rgba(255, 0, 255, 0.4);
+
+  /* Typography */
+  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Rubik', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+  --spacing-2xl: 8rem;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease-out;
+  --transition-normal: 0.3s ease-out;
+  --transition-slow: 0.5s ease-out;
+
+  /* Effects */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(10px);
+  --glow-box: 0 0 20px var(--accent-glow);
+
+  /* Z-index */
+  --z-modal: 1000;
+  --z-nav: 100;
+  --z-overlay: 50;
+}
+
+@media (prefers-color-scheme: light) {
+
+  /* Enforce dark mode for this portfolio regardless of system preference */
+  :root {
+    --bg-primary: #121212;
+    --bg-secondary: #1a1a1a;
+    --text-primary: #ffffff;
+  }
+}
