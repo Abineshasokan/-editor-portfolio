@@ -85,10 +85,10 @@ const SystemStatus = () => {
                             SYSTEM <span className="text-[#00FFFF]">STATUS</span>
                         </h2>
                         <p className="text-gray-400 font-mono text-sm">
-              > INITIALIZING CORE MODULES...<br />
-              > LOADING CREATIVE ASSETS...<br />
-              > OPTIMIZING RENDER ENGINE...<br />
-                            <span className="text-[#00FFFF] animate-pulse">> SYSTEM ONLINE</span>
+                            &gt; INITIALIZING CORE MODULES...<br />
+                            &gt; LOADING CREATIVE ASSETS...<br />
+                            &gt; OPTIMIZING RENDER ENGINE...<br />
+                            <span className="text-[#00FFFF] animate-pulse">&gt; SYSTEM ONLINE</span>
                         </p>
 
                         <div className="p-4 border border-[#00FFFF]/20 rounded bg-[#00FFFF]/5 backdrop-blur-sm">
