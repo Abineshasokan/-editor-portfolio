@@ -1,6 +1,11 @@
 import Image from "next/image";
 import ParallaxHero from "@/components/ui/ParallaxHero";
+import HeroValueSection from "@/components/ui/HeroValueSection";
+import DemoReelSection from "@/components/ui/DemoReelSection";
+import ServicesSection from "@/components/ui/ServicesSection";
 import ProjectCard from "@/components/ui/ProjectCard";
+import CaseStudySection from "@/components/ui/CaseStudySection";
+import TrustSection from "@/components/ui/TrustSection";
 import ContactSection from "@/components/ui/ContactSection";
 
 const projects = [
@@ -10,7 +15,11 @@ const projects = [
     tags: ["Cloud Storage", "Portfolio", "Raw Files"],
     image: "https://placehold.co/600x400/1F1F1F/00FFFF/png?text=Google+Drive",
     demoLink: "https://drive.google.com/drive/folders/1uGB2XZtTMUnt5KnRWBsXk-DPju718zaa?usp=sharing",
-    repoLink: ""
+    repoLink: "",
+    details: {
+      role: "Content Library",
+      purpose: "Showcase raw vs. edited footage to demonstrate editing impact."
+    }
   },
   {
     title: "YouTube Channel",
@@ -18,7 +27,11 @@ const projects = [
     tags: ["Video Content", "Shorts", "Cinematic"],
     image: "https://placehold.co/600x400/FF0000/FFFFFF/png?text=YouTube",
     demoLink: "https://youtube.com/@nesh_aura_fx?si=yH4gTerXDXYfIe4f",
-    repoLink: ""
+    repoLink: "",
+    details: {
+      role: "Creator & Editor",
+      purpose: "Building a personal brand and demonstrating long-form retention techniques."
+    }
   },
   {
     title: "Instagram Page",
@@ -26,7 +39,11 @@ const projects = [
     tags: ["Social Media", "Reels", "Branding"],
     image: "https://placehold.co/600x400/C13584/FFFFFF/png?text=Instagram",
     demoLink: "https://www.instagram.com/abin_esh_26?igsh=amVpc2xvZjBidTg1",
-    repoLink: ""
+    repoLink: "",
+    details: {
+      role: "Social Media Manager",
+      purpose: "Driving engagement through fast-paced, trend-aware short-form content."
+    }
   }
 ];
 
@@ -34,6 +51,9 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <ParallaxHero />
+      <HeroValueSection />
+      <DemoReelSection />
+      <ServicesSection />
 
       <section id="projects" className="py-20 px-6 relative z-10 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto max-w-6xl">
@@ -48,6 +68,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <CaseStudySection />
+      <TrustSection />
 
       <section id="about" className="py-20 px-6 relative z-10 bg-black/50">
         <div className="container mx-auto max-w-6xl">

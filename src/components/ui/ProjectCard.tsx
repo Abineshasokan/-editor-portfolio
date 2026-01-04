@@ -12,19 +12,23 @@ interface ProjectCardProps {
     demoLink?: string;
     repoLink?: string;
     index: number;
+    details?: {
+        role: string;
+        purpose: string;
+    };
 }
 
-export default function ProjectCard({ title, description, tags, image, demoLink, repoLink, index }: ProjectCardProps) {
+export default function ProjectCard({ title, description, tags, image, demoLink, repoLink, index, details }: ProjectCardProps) {
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:border-accent/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,255,0.1)]"
+            className="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:border-accent/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,255,0.1)] flex flex-col h-full"
         >
             {/* Image Placeholder */}
-            <div className="h-48 bg-gradient-to-br from-gray-800 to-black relative overflow-hidden">
+            <div className="h-48 bg-gradient-to-br from-gray-800 to-black relative overflow-hidden shrink-0">
                 <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {/* If we had real images, we'd use Next.js Image here */}
                 <div className="flex items-center justify-center h-full text-gray-600 font-mono text-sm">
@@ -32,11 +36,24 @@ export default function ProjectCard({ title, description, tags, image, demoLink,
                 </div>
             </div>
 
-            <div className="p-6">
+            <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">{title}</h3>
                 <p className="text-gray-400 text-sm mb-4 line-clamp-3">{description}</p>
 
-                <div className="flex flex-wrap gap-2 mb-6">
+                {details && (
+                    <div className="mb-4 p-3 bg-white/5 rounded-lg text-xs space-y-2 border border-white/5">
+                        <div className="flex gap-2">
+                            <span className="text-accent font-bold uppercase tracking-wider">Role:</span>
+                            <span className="text-gray-300">{details.role}</span>
+                        </div>
+                        <div className="flex gap-2">
+                            <span className="text-accent font-bold uppercase tracking-wider">Goal:</span>
+                            <span className="text-gray-300">{details.purpose}</span>
+                        </div>
+                    </div>
+                )}
+
+                <div className="flex flex-wrap gap-2 mb-6 mt-auto">
                     {tags.map((tag) => (
                         <span key={tag} className="text-xs font-mono px-2 py-1 rounded-full bg-white/5 text-gray-300 border border-white/5">
                             {tag}
@@ -44,7 +61,7 @@ export default function ProjectCard({ title, description, tags, image, demoLink,
                     ))}
                 </div>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 pt-4 border-t border-white/5">
                     {demoLink && (
                         <a href={demoLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-white hover:text-accent transition-colors">
                             <ExternalLink className="w-4 h-4" /> Visit Platform

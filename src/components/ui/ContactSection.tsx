@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Instagram, Linkedin, Youtube, MessageCircle, Calendar } from 'lucide-react';
+import { Instagram, Linkedin, Youtube, MessageCircle, Calendar, Mail } from 'lucide-react';
 
 export default function ContactSection() {
     const socialLinks = [
@@ -9,6 +9,7 @@ export default function ContactSection() {
         { icon: Linkedin, href: "https://www.linkedin.com/in/abinesh-asokan-7457b2290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", label: "LinkedIn" },
         { icon: Youtube, href: "https://youtube.com/@nesh_aura_fx?si=yH4gTerXDXYfIe4f", label: "YouTube" },
         { icon: MessageCircle, href: "https://wa.me/919342601198?text=Hello%20NeshAuraFx,%20I'd%20like%20to%20discuss%20a%20project.", label: "WhatsApp" },
+        { icon: Mail, href: "mailto:abineshabinesh46406@gmail.com", label: "Email" },
     ];
 
     return (
@@ -58,22 +59,28 @@ export default function ContactSection() {
                 </div>
 
                 {/* Scheduling CTA */}
-                <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="relative inline-block"
-                >
-                    <div className="absolute -inset-1 bg-accent rounded-lg blur opacity-25 animate-pulse"></div>
-                    <a
-                        href="https://us05web.zoom.us/launch/chat?src=direct_chat_link&email=abinesh.ks2006%40gmail.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="relative flex items-center gap-3 px-8 py-4 bg-accent text-black font-bold rounded-lg hover:bg-cyan-400 transition-colors"
+                <div className="space-y-8">
+                    <motion.div
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="relative inline-block"
                     >
-                        <Calendar className="w-5 h-5" />
-                        BOOK A VIRTUAL MEETING
-                    </a>
-                </motion.div>
+                        <div className="absolute -inset-1 bg-accent rounded-lg blur opacity-25 animate-pulse"></div>
+                        <a
+                            href="https://us05web.zoom.us/launch/chat?src=direct_chat_link&email=abinesh.ks2006%40gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="relative flex items-center gap-3 px-8 py-4 bg-accent text-black font-bold rounded-lg hover:bg-cyan-400 transition-colors"
+                        >
+                            <Calendar className="w-5 h-5" />
+                            BOOK A VIRTUAL MEETING
+                        </a>
+                    </motion.div>
+
+                    <p className="text-xl text-white font-medium">
+                        Don't let your content get lost in the feed. <span className="text-accent">Let's make it stand out.</span>
+                    </p>
+                </div>
             </div>
         </section>
     );
